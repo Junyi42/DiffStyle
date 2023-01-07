@@ -1,7 +1,1 @@
-CUDA_VISIBLE_DEVICES=2. python cartoon_styles.py --description "A serious man in short hair"  --path /hdd/junyi/prompt-to-prompt/example_images/portrait4.jpg --self_ratio 0.2
-CUDA_VISIBLE_DEVICES=2. python cartoon_styles.py --description "A serious man in short hair"  --path /hdd/junyi/prompt-to-prompt/example_images/portrait4.jpg --self_ratio 0.3
-CUDA_VISIBLE_DEVICES=2. python cartoon_styles.py --description "A serious man in short hair"  --path /hdd/junyi/prompt-to-prompt/example_images/portrait4.jpg --self_ratio 0.4
-CUDA_VISIBLE_DEVICES=2. python cartoon_styles.py --description "A serious man in short hair"  --path /hdd/junyi/prompt-to-prompt/example_images/portrait4.jpg --self_ratio 0.5
-CUDA_VISIBLE_DEVICES=2. python cartoon_styles.py --description "A serious man in short hair"  --path /hdd/junyi/prompt-to-prompt/example_images/portrait4.jpg --self_ratio 0.6
-CUDA_VISIBLE_DEVICES=2. python cartoon_styles.py --description "A serious man in short hair"  --path /hdd/junyi/prompt-to-prompt/example_images/portrait4.jpg --self_ratio 0.7
-CUDA_VISIBLE_DEVICES=2. python cartoon_styles.py --description "A serious man in short hair"  --path /hdd/junyi/prompt-to-prompt/example_images/portrait4.jpg --self_ratio 0.8
+CUDA_VISIBLE_DEVICES=0 python cartoon_modify.py
