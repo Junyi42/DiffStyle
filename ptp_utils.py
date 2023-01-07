@@ -19,7 +19,7 @@ import cv2
 from typing import Optional, Union, Tuple, List, Callable, Dict
 from IPython.display import display
 from tqdm.notebook import tqdm
-
+import os
 
 def text_under_image(image: np.ndarray, text: str, text_color: Tuple[int, int, int] = (0, 0, 0)):
     h, w, c = image.shape
@@ -34,7 +34,9 @@ def text_under_image(image: np.ndarray, text: str, text_color: Tuple[int, int, i
     return img
 
 
-def view_images(images, num_rows=1, offset_ratio=0.02):
+import datetime
+
+def view_images(images, num_rows=1, offset_ratio=0.02, save=True, description='',folder=None):
     if type(images) is list:
         num_empty = len(images) % num_rows
     elif images.ndim == 4:
@@ -59,6 +61,22 @@ def view_images(images, num_rows=1, offset_ratio=0.02):
 
     pil_img = Image.fromarray(image_)
     display(pil_img)
+    
+    if save:
+        # 获取当前时间
+        now = datetime.datetime.now()
+        # 将图片保存到./tmp 文件夹下
+        if folder:  # 如果 folder 不为空
+            # 判断 folder 文件夹是否存在，若不存在，则新建
+            if not os.path.exists(f"./tmp/{folder}"):
+                os.makedirs(f"./tmp/{folder}")
+            # 使用 folder 文件夹保存图片
+            pil_img.save(f"./tmp/{folder}/{description}+{now}.jpg")
+        else:
+            if not os.path.exists("./tmp"):
+                os.makedirs("./tmp")
+            pil_img.save(f"./tmp/{description}+{now}.jpg")
+
 
 
 def diffusion_step(model, controller, latents, context, t, guidance_scale, low_resource=False):
