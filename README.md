@@ -13,7 +13,8 @@ Specifically, we implemented our method over  [Latent Diffusion](https://hugging
 Additional required packages are listed in the requirements file.
 The code was tested on a RTX3090 24GB but should work on other cards with at least **23GB** VRAM.
 
-You can set up the conda environment with (python3.8+CUDA11.1) using the command below:
+You can set up the conda environment (with python3.8+CUDA11.1) using the command below:
+
 ``` 
 pip install -r requirements.txt
 ```
@@ -23,20 +24,20 @@ pip install -r requirements.txt
 To quickly generate results with **different styles and different extents**, you can use the following command:
 
 ``` 
-bash bash/exp.sh
+bash bash/exp_styles.sh
 ``` 
 To quickly generate results with **editable style transfer**, you can use the following command:
 
 ``` 
-bash bash/exp1.sh
+bash bash/exp1_modify.sh
 ``` 
 
 Alternatively, you can use the following command to generate results with specific parameters:
 
 ``` 
-python cartoon_styles.py --description "A handsome man in short hair" --path example_images/portrait5.jpg --blend man --self_ratio 0.2
+python cartoon_styles.py --description "A handsome man in short hair" --path example_images/portrait5.jpg --blend man --self_ratio 0.4
 ``` 
-The description `parameter` allows you to provide a description of the image. The `path` parameter allows you to specify the path of the image. The `blend` parameter allows you to specify the part of the image that you want to modify. The `self_ratio` parameter allows you to control the strength of the style, with a range of 0.2 to 0.8, where a smaller value results in a stronger style.
+The `--description` parameter allows you to provide a description of the image. The `--path` parameter allows you to specify the path of the image. The `--blend` parameter allows you to specify the part of the image that you want to modify. The `--self_ratio` parameter allows you to control the strength of the style, with a range of $0.2$ to $0.8$, where a smaller value results in a stronger style.
 
 
 ## Result
