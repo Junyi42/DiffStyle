@@ -29,7 +29,7 @@ bash bash/exp_styles.sh
 To quickly generate results with **editable style transfer**, you can use the following command:
 
 ``` 
-bash bash/exp1_modify.sh
+bash bash/exp_modify.sh
 ``` 
 
 Alternatively, you can use the following command to generate results with specific parameters:
